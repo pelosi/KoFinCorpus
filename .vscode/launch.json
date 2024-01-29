@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "runtimeExecutable": "npx", // ts-node 실행을 위한 npx 설정
+            "runtimeArgs": ["ts-node"], // ts-node를 실행
+            "program": "${workspaceFolder}/src/DartFetcher.ts", // "${workspaceFolder}/src/fetchPdfLinks.ts",
+            // "outFiles": ["${workspaceFolder}/**/*.js"]
+            "outFiles": ["${workspaceFolder}/**/*.ts"]
+        }
+    ]
+}
