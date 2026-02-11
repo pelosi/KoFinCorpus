@@ -31,7 +31,7 @@ AI/LLM의 RAG(Retrieval-Augmented Generation) 검색 및 모델 학습을 위한
 
 ```
 KoFinCorpus/
-├── src/                              # TypeScript 소스 코드
+├── src/                             # TypeScript 소스 코드
 │   ├── DartFetcher.ts               # DART 공시자료 수집기
 │   ├── HankyungConsensusFetcher.ts  # 한경 컨센서스 수집기
 │   ├── MiraeAssetFetcher.ts         # 미래에셋증권 수집기
@@ -43,7 +43,7 @@ KoFinCorpus/
 ├── downloads/                       # 수집된 코퍼스 저장소
 ├── package.json                     # 프로젝트 의존성
 ├── tsconfig.json                    # TypeScript 설정
-└── eslint.config.mjs               # ESLint 설정
+└── eslint.config.mjs                # ESLint 설정
 ```
 
 ## 기술 스택
@@ -96,8 +96,8 @@ npx ts-node src/MiraeAssetFetcher.ts
 
 ```
 ./downloads/
-├── DART-{기업명}-공시자료-meta.json    # 검색 메타데이터 (RAG 인덱싱용)
-├── DART-{기업명}-공시자료.json         # 다운로드 링크 및 문서 정보
+├── DART-{기업명}-공시자료-meta.json    # 웹에서 추출한 메타데이터 정보
+├── DART-{기업명}-공시자료.json         # 다운로드 링크 및 생성된 파일명 정보
 ├── DART-{기업명}-공시자료/             # 수집된 PDF 문서
 ├── 한경컨센서스-기업분석-meta.json
 ├── 한경컨센서스-기업분석.json
@@ -144,6 +144,16 @@ npx ts-node src/MiraeAssetFetcher.ts
 | typescript | ^5.6.3 | TypeScript 컴파일러 |
 | @types/node | ^22.9.0 | Node.js 타입 정의 |
 | eslint | ^9.15.0 | 코드 린팅 |
+
+## 관련 프로젝트
+
+이 프로젝트는 AI/LLM 데이터 파이프라인의 일부로, 다음 프로젝트들과 함께 활용됩니다:
+
+| 프로젝트 | 역할 | 설명 |
+|----------|------|------|
+| **KoFinCorpus** | 데이터 수집 | 금융 도메인 PDF/문서 코퍼스 수집기 (본 프로젝트) |
+| **KoDocParser** | 로컬 파싱 | PyMuPDF 기반 PDF 구조화 추출 |
+| **KoDocAI** | AI 파싱 | Upstage Document Parse API 기반 AI 문서 파싱 |
 
 ## 라이선스
 
